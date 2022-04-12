@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
+import List_repair_CarAppearance from "../views/List_repair_CarAppearance.vue"
 import Detail_repair_CarApperance from "../views/Detail_repair_CarApperance.vue"
 
 const routes = [
@@ -17,6 +18,11 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  {
+  },
+    path: "/List_repair_CarAppearance",
+    name: "List_repair_CarAppearance",
+    component: List_repair_CarAppearance,
   {
     path: "/Detail_repair_CarApperance",
     name: "Detail_repair_CarApperance",

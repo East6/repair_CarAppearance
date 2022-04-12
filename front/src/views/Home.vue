@@ -4,6 +4,8 @@
     <br>
     <router-link to="/Detail_repair_CarApperance">修理工場<b>詳細</b>ページへ</router-link>
   </div>
+  <br>
+  <router-link to="/List_repair_CarAppearance">修理工場一覧ページへ</router-link>
 </template>
 
 <script>
