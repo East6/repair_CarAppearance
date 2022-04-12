@@ -1,6 +1,8 @@
 <template>
   <div class="home">
     <HomePage msg="repair_CarAppearance_ 仮ホームページ" />
+    <br>
+    <router-link to="/Detail_repair_CarApperance">修理工場<b>詳細</b>ページへ</router-link>
   </div>
 </template>
 
