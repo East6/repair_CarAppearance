@@ -26,7 +26,7 @@
       })
       // axiosを用いて，データを取得している(非同期処理)
       const getData = ()=>{
-        //getの後に，thenを呼び出す(=>の後の内容が実行)
+        //getの後に，thenを呼び出す(=>の後の内容が実行)らしい...
         axios.get(url).then((result)=> {
           data.mydata = result.data
         })
