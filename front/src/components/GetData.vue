@@ -62,6 +62,9 @@
         axios.get(url + data.id).then((result)=> {
           console.log(result.data)
           data.json_data = result.data
+        }).catch((error)=> {//HTTPレスポンスとして，404 エラーコードが,帰ってくると，catch文の中が実行される
+          data.message = "ERROR!"
+          data.json_data = null
         })
       }
       return { data, doClick}
