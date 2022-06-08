@@ -9,15 +9,18 @@
       <p>{{data.json_data}}</p>
 
       <div class="formgroup">
-        <input type="number" v-model="data.id" /><!--v-modelの中に入れたのを引き継いで，doClickの処理ができるっぽい-->
+        <!--
+        <input type="number" v-model="data.id" />--> <!--v-modelの中に入れたのを引き継いで，doClickの処理ができるっぽい-->
         <button @click="doClick">Click</button>
       </div>
 
+
+      <!--
       上記のjsonデータを綺麗にすると以下のようになる<br>
       <table>
         <tr>
           <th>ID</th>
-          <td>{{data.json_data ? data.json_data.id : "-"}} </td><!--何この書き方?!-->
+          <td>{{data.json_data ? data.json_data.id : "-"}} </td>
         </tr>
 
         <tr>
@@ -32,7 +35,7 @@
 
 
       </table>
-     
+      -->
 
     </p>
   </div>
@@ -42,14 +45,14 @@
   import axios from "axios"
   import { reactive, onMounted } from "vue"
 
-  const url = "https://jsonplaceholder.typicode.com/posts/"
+  const url = "http://localhost:3000/api/user/profile "
 
   export default{
     setup(props){
       //data変数?にそれぞれ値を入れている(data.titleは「Axios」が表示)
       const data = reactive({
         title:"Axios",
-        message:"this is axios sample.",
+        message:"http://localhost:3000/api/user/profile からデータを取得する",
         id:0,
         json_data: null,
       })
@@ -59,7 +62,7 @@
         //getでカッコ内のデータを受け取った後に，thenを呼び出す(=>の後の内容が実行)らしい...
         //axiosでデータを受け取ると，json形式の場合，オブジェクトに変換してくれるらしい...
         /// data.json_data というオブジェクトの考え方????
-        axios.get(url + data.id).then((result)=> {
+        axios.get(url).then((result)=> {
           console.log(result.data)
           data.json_data = result.data
         }).catch((error)=> {//HTTPレスポンスとして，404 エラーコードが,帰ってくると，catch文の中が実行される
